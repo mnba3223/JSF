@@ -5,38 +5,42 @@
  */
 package whatever;
 
+import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author mnba3
  */
 @Named(value = "whateever")
-@RequestScoped
-public class whateever {
-
+@SessionScoped
+public class whateever implements Serializable {
     private String name;
-
-    
-     public String getName() {
+    private String gender;
+    public whateever() {
+    }
+  
+    public String getName() {
         return name;
     }
+  
     public void setName(String name) {
         this.name = name;
     }
-
-    public String printout() {
-        name += "**";
-        return "newjsf2";
+  
+    public String getGender() {
+        return gender;
     }
-
-    /**
-     *
-     * Creates a new instance of whateever
-     */
-    public whateever() {
+  
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+  
+    public String handleAction(){
+        return "newjsf2?faces-redirect=true";
     }
 
 }

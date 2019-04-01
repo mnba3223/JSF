@@ -1,20 +1,28 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   
         <title>Facelet Title</title>
+    <h:head>
+        <title>Unit02: 表單資料提交 </title>
     </h:head>
     <h:body>
         <h:form>
-            <p>
-                name:<h:inputText value="#{whateever.name}"/>
-            </p>
-            
-            <h:commandButton value="OK" action="#{whateever.printout}"/>
-            
+  
+            <h:outputLabel value="姓名" /> 
+            <h:inputText value="#{whateever.name}"/> <br />
+  
+            <h:outputLabel value="性別" />
+            <h:selectOneRadio value="#{whateever.gender}">
+                <f:selectItem itemLabel="男" itemValue="F" />
+                <f:selectItem itemLabel="女" itemValue="M" />
+            </h:selectOneRadio> <br />
+  
+            <h:commandButton action="#{whateever.handleAction}" type="submit" value="Sumit" />
+            <h:commandButton action="index" type="reset" value="Reset" />
         </h:form>
-        
     </h:body>
 </html>
 

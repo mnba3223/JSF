@@ -2,11 +2,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
+     <h:head>
+        <title>Show Customer Info</title>
     </h:head>
     <h:body>
-        Hello #{whateever.name}
+        Name: #{whateever.name} <br/>
+        Gender: #{whateever.gender == "F"? "男" : "女"} <br/>
+  
+        <h:link outcome="index" > Back </h:link>
+  
     </h:body>
 </html>
 
