@@ -24,8 +24,14 @@
         </h:form>
 
 
+        <!-- this is use paramID
         <c:if test="${param['ItemID']  != null }"   >
             img: <h:graphicImage library="img" name="NV#{param['ItemID']}.jpg"></h:graphicImage>
+        </c:if>
+        -->
+                    
+        <c:if test="${processPage.itemID!= 0}"   >
+            img: <h:graphicImage library="img" name="NV#{processPage.itemID}.jpg"></h:graphicImage>
         </c:if>
 
 
